@@ -1,2 +1,8 @@
 .gradle/
 build/
+.idea/*
+!.idea/runConfigurations
+*.swp
+*.png
+*.gif
+*.mp3
