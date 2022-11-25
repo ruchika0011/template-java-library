@@ -1,7 +1,7 @@
-# [Repo Name]
+# [UPDATE ME - Repo Name]
 
-[quick "elevator pitch" description of repo]
-[UPDATE ME]
+[UPDATE ME - quick "elevator pitch" description of repo]
+
 
 ## How to build
 
