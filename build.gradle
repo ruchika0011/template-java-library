@@ -53,6 +53,13 @@ test {
     useJUnitPlatform()
 }
 
+tasks.withType(Test).configureEach {
+    testLogging {
+        exceptionFormat = 'full'
+        showStandardStreams = true
+    }
+}
+
 spotless {
     java {
         googleJavaFormat()
@@ -65,15 +72,12 @@ spotless {
 
 pmd {
     consoleOutput = true
-    ruleSetFiles = files(rootProject.file('pmd.xml'))
+    ruleSetFiles = files(rootProject.file('.build/pmd.xml'))
     ruleSets = []
     incrementalAnalysis = true
 }
 
 dependencies {
-    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.9.1'
-    testImplementation 'org.junit.jupiter:junit-jupiter-params:5.9.1'
-    testImplementation 'org.slf4j:slf4j-simple:2.0.3'
-    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.9.1'
+    testImplementation 'org.junit.jupiter:junit-jupiter:5.9.1'
     testRuntimeOnly 'org.junit.platform:junit-platform-launcher:1.9.1'
 }
